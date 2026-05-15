@@ -22,3 +22,6 @@ Bem-vindo ao meu repositório de projetos acadêmicos e pessoais, desenvolvido c
 
 - LinkedIn: www.linkedin.com/in/enzo-dollabella-897634311
 - GitHub: https://github.com/enzodollabellasm
+
+
+🌐 **Acesse meu portfólio online:** [enzodollabellasm.github.io/meu-portfolio](https://enzodollabellasm.github.io/meu-portfolio)

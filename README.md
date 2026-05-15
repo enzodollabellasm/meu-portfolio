@@ -24,4 +24,6 @@ Bem-vindo ao meu repositório de projetos acadêmicos e pessoais, desenvolvido c
 - GitHub: https://github.com/enzodollabellasm
 
 
-🌐 **Acesse meu portfólio online:** [enzodollabellasm.github.io/meu-portfolio](https://enzodollabellasm.github.io/meu-portfolio)
+## 🌐 Acesse meu portfólio online: 
+
+- [enzodollabellasm.github.io/meu-portfolio](https://enzodollabellasm.github.io/meu-portfolio)

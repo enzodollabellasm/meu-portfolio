@@ -11,4 +11,4 @@ Projeto desenvolvido anteriormente como parte do trabalho de entrega inicial de 
 ##  Como acessar
 
 - Currículo: abra o arquivo `curriculo.pdf`.
-- Site: abra a pasta `site/` e execute `Enzo Dollabella.html` no navegador.
+- Site: abra a pasta `site/` e execute `index.html` no navegador.

@@ -34,3 +34,9 @@ Em conformidade com os requisitos de Engenharia de Software e com o apoio consul
 ##  Acesse meu portfólio online: 
 
 - [enzodollabellasm.github.io/meu-portfolio](https://enzodollabellasm.github.io/meu-portfolio)
+
+##  Práticas de Colaboração e Engenharia (Padrão de Mercado)
+
+Para garantir a escalabilidade e o trabalho em equipe no ecossistema do **portfolioHUB**, o projeto adota:
+1. **Conventional Commits:** Histórico de versionamento padronizado utilizando prefixos claros como `feat:` para novas funcionalidades, `fix:` para correções e `style:` para alterações visuais.
+2. **Ambiente Pronto para Fork/Pull Requests:** Diretórios modulares que permitem que outros desenvolvedores clonem o projeto, criem suas próprias branches de funcionalidade (`feature/nome-da-feature`) e submetam revisões de código de forma segura.

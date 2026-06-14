@@ -1,161 +1,236 @@
+/* === style.css - Dark Fusion + Detalhes Dinâmicos === */
+
+/* --- Variáveis de Paleta (Gemini) --- */
 :root {
-  --bg: #fafafa;
-  --surface: #ffffff;
-  --text: #1a1a1a;
-  --text-secondary: #555;
-  --border: #eaeaea;
-  --primary: #0066cc;
-  --primary-hover: #004b99;
-  --radius: 12px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+    --bg-color: #1a1d21;
+    --container-bg: #22262b;
+    --text-primary: #a0aab8;
+    --title-primary: #ffffff;
+    --accent-color: #007bff;
+    --accent-dark: #0056b3;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- Animação de fundo (gradiente sutil) --- */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  padding: 2rem 1rem;
+    background: linear-gradient(135deg, #1a1d21 0%, #2a2e35 50%, #1a1d21 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
 }
 
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Container --- */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+    background-color: var(--container-bg);
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05) inset;
+    backdrop-filter: blur(2px);
 }
 
-/* Profile Header */
+/* --- Perfil e Biografia --- */
 .profile {
-  text-align: center;
-  margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 .profile-avatar {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
 }
 
-.profile h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+h1 {
+    color: var(--title-primary);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .tagline {
-  color: var(--text-secondary);
-  font-weight: 500;
-  margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-right: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-right: 8px;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: var(--accent-color); }
 }
 
 .bio {
-  color: var(--text-secondary);
-  max-width: 500px;
-  margin: 0 auto 1.5rem;
-  font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 20px 0;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-primary);
 }
 
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
+.social-links a.btn-outline {
+    color: var(--title-primary);
+    border-color: var(--text-primary);
+    margin: 0 8px;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    padding: 0.6rem 1.8rem;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: all 0.2s;
-  background: var(--primary);
-  color: white;
+.social-links a.btn-outline:hover {
+    color: #ffffff;
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    transform: translateY(-2px);
 }
 
-.btn:hover {
-  background: var(--primary-hover);
+/* --- Projetos --- */
+h2 {
+    color: var(--title-primary);
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
 }
 
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-.btn-outline:hover {
-  background: var(--surface);
-  border-color: #ccc;
-}
-
-.btn-text {
-  background: transparent;
-  color: var(--primary);
-  padding: 0.5rem 0.5rem;
-}
-
-.btn-text:hover {
-  background: rgba(0,102,204,0.05);
-}
-
-/* Projects Section */
-.projects h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
-  font-weight: 600;
+h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 12px auto 0;
+    border-radius: 3px;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.2s;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(160,170,184,0.08);
+    padding: 25px;
+    border-radius: 16px;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 28px rgba(0,123,255,0.15);
+    background: rgba(255,255,255,0.06);
 }
 
 .project-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 12px;
 }
 
 .project-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+    color: var(--title-primary);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
 }
 
 .project-card p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 .project-links {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-/* Footer */
+.project-links a.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem 1.4rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.project-links a.btn:hover {
+    background-color: var(--accent-dark);
+    box-shadow: 0 4px 14px rgba(0,123,255,0.4);
+}
+
+.project-links a.btn-text {
+    color: var(--accent-color);
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.project-links a.btn-text:hover {
+    background: rgba(0,123,255,0.1);
+    color: #ffffff;
+}
+
+/* --- Rodapé --- */
 footer {
-  text-align: center;
-  margin-top: 3rem;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+    text-align: center;
+    color: var(--text-primary);
+    margin-top: 60px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 25px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
 }
